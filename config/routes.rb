@@ -1,7 +1,11 @@
 Desert::Application.routes.draw do
   resources :products
-  root 'products#index'
   resources :users, except: [:index]
+  resources :sessions, only: [:create, :new, :destroy]
+  root 'products#index'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
